@@ -26,17 +26,15 @@ namespace CafeABC.Models
     {
 
         [Required(ErrorMessage = "Name is required.")]
-        [MaxLength(100, ErrorMessage = "Name cannot exceed 100 characters.")]
         public  string? Name { get; set; }
 
         [Required(ErrorMessage = "Description is required.")]
-        [MaxLength(255, ErrorMessage = "Description cannot exceed 255 characters.")]
         public  string? Description { get; set; }
 
         public string? Logo { get; set; }
 
         [Required(ErrorMessage = "Location is required.")]
-        [MaxLength(255, ErrorMessage = "Location cannot exceed 255 characters.")]
+
         public  string? Location { get; set; }
 
 

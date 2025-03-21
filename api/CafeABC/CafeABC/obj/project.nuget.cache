@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v/IRJDMxRmM=",
+  "dgSpecHash": "szos8dq4qCo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
+  "projectFilePath": "C:\\Users\\TERENCE WONG\\Desktop\\AS\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TERENCE WONG\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\TERENCE WONG\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

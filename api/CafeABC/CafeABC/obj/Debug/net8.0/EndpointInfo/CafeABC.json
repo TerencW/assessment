@@ -284,12 +284,10 @@
         "type": "object",
         "properties": {
           "name": {
-            "maxLength": 100,
             "minLength": 1,
             "type": "string"
           },
           "description": {
-            "maxLength": 255,
             "minLength": 1,
             "type": "string"
           },
@@ -298,7 +296,6 @@
             "nullable": true
           },
           "location": {
-            "maxLength": 255,
             "minLength": 1,
             "type": "string"
           }

@@ -2141,11 +2141,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
+      "projectUniqueName": "C:\\Users\\TERENCE WONG\\Desktop\\AS\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
       "projectName": "CafeABC",
-      "projectPath": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
+      "projectPath": "C:\\Users\\TERENCE WONG\\Desktop\\AS\\assessment\\api\\CafeABC\\CafeABC\\CafeABC.csproj",
       "packagesPath": "C:\\Users\\TERENCE WONG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\obj\\",
+      "outputPath": "C:\\Users\\TERENCE WONG\\Desktop\\AS\\assessment\\api\\CafeABC\\CafeABC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

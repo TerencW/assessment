@@ -5,7 +5,7 @@ const apiEndpoint = "https://localhost:44355/api" ;
 
 export async function getEmployeeList(locationQuery = '') {
 
-    const response = await http.get(`${apiEndpoint}/employees?location=${locationQuery}`);
+    const response = await http.get(`${apiEndpoint}/employees?cafe=${locationQuery}`);
     return response;
 
 };
