@@ -70,6 +70,7 @@ const EmployeeForm = () => {
 
     const cafe = cafes.find((c) => c.cafe_id === cafe_id);
     setSelectedCafe(cafe.name);
+    setIsDirty(true);
     if (cafe) {
       setFormValues((prev) => ({ ...prev, cafeId: cafe.cafe_id }));
     }
