@@ -42,3 +42,9 @@ Update the connection string for your SQL Server:
 }
 
 
+
+Open config.js.
+Update url for you base API URL :
+
+
+run the initsql.sql to setup database and populate sample data 

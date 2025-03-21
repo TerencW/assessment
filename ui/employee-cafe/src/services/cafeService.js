@@ -1,7 +1,8 @@
+import { apiUrl } from "../config";
 import http from "./httpService";
 
 
-const apiEndpoint = "https://localhost:44355/api" ;
+const apiEndpoint = apiUrl ;
 
 export async function getCafeList(locationQuery = '') {
 
