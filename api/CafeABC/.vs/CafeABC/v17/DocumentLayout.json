@@ -1,0 +1,130 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\models\\cafe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\models\\cafe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\services\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\services\\datarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\services\\idatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\services\\idatarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|c:\\users\\terence wong\\desktop\\assessment\\api\\cafeabc\\cafeabc\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A91C857-D8B2-4E49-9916-4788DB3BBE63}|CafeABC\\CafeABC.csproj|solutionrelative:cafeabc\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Services\\DataRepository.cs",
+              "RelativeDocumentMoniker": "CafeABC\\Services\\DataRepository.cs",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Services\\DataRepository.cs",
+              "RelativeToolTip": "CafeABC\\Services\\DataRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAowKAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T04:01:39.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDataRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Services\\IDataRepository.cs",
+              "RelativeDocumentMoniker": "CafeABC\\Services\\IDataRepository.cs",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Services\\IDataRepository.cs",
+              "RelativeToolTip": "CafeABC\\Services\\IDataRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T02:05:41.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "CafeABC\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Models\\Employee.cs",
+              "RelativeToolTip": "CafeABC\\Models\\Employee.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAhwCQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T15:15:50.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cafe.cs",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Models\\Cafe.cs",
+              "RelativeDocumentMoniker": "CafeABC\\Models\\Cafe.cs",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Models\\Cafe.cs",
+              "RelativeToolTip": "CafeABC\\Models\\Cafe.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA2wCwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T01:54:26.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "CafeABC\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "CafeABC\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T02:24:52.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\appsettings.json",
+              "RelativeDocumentMoniker": "CafeABC\\appsettings.json",
+              "ToolTip": "C:\\Users\\TERENCE WONG\\Desktop\\assessment\\api\\CafeABC\\CafeABC\\appsettings.json",
+              "RelativeToolTip": "CafeABC\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-20T07:56:22.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
