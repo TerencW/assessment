@@ -126,8 +126,13 @@ const EmployeeList = () => {
   ];
 
   return (
+
     <div style={{ padding: "20px" }}>
+      
       {contextHolder}
+      {loading && <Spin tip="Loading..." />}
+      {error && <Alert message={error} type="error" showIcon />}
+
       <h1>Employees {cafeFilter ? `for ${cafeFilter}` : ""}</h1>
 
       {/* ✅ Always Show "Back to Cafes" Button */}
@@ -144,8 +149,7 @@ const EmployeeList = () => {
         )}
       </div>
 
-      {loading && <Spin tip="Loading..." />}
-      {error && <Alert message={error} type="error" showIcon />}
+
 
       <Table dataSource={data} columns={columns} pagination={{ pageSize: 10 }} />
     </div>

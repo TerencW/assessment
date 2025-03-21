@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Form, Button, Upload, message, Image } from 'antd';
+import { Form, Button, Upload, message, Image, Flex, Row } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import TextBox from '../../component/textbox';
 import { saveCafe } from '../../services/cafeService';
@@ -94,10 +94,9 @@ const CafeForm = () => {
 
   // Handle Form Submission
   const handleSubmit = async () => {
-    if (!isDirty )
-      {
-         navigate("/");
-      }
+    if (!isDirty) {
+      navigate("/");
+    }
 
     if (formValues.name.length < 6 || formValues.name.length > 10) {
       messageApi.error("Name must be between 6 and 10 characters.");
@@ -136,9 +135,13 @@ const CafeForm = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
-      <h2>{isEditMode ? 'Edit' : 'Add'} Café</h2>
+    <div style={{ maxWidth: '80%', margin: 'auto', padding: '20px' }}>
+
       {contextHolder}
+
+      <h2>{isEditMode ? 'Edit' : 'Add'} Café</h2>
+
+
 
       <Form layout="vertical">
         <TextBox
@@ -154,50 +157,61 @@ const CafeForm = () => {
           value={formValues.description}
           onChange={(e) => handleChange("description", e.target.value)}
           maxLength={256}
+          required
         />
         <TextBox
           label="Location"
           value={formValues.location}
           onChange={(e) => handleChange("location", e.target.value)}
-
+          required
         />
 
-        {/* ✅ Upload Component (Only One Image Allowed) */}
         <div style={{ marginBottom: '15px' }}>
-          <label style={{ fontWeight: 'bold' }}>Logo (Max: 2MB)</label>
-          <Upload
-            maxCount={1}
-            beforeUpload={() => false}
-            onChange={handleFileChange}
-            showUploadList={{ showPreviewIcon: false }}
-            fileList={fileList}
-          >
-            <Button icon={<UploadOutlined />}>Upload Logo</Button>
-          </Upload>
+          <Row>
+            <label style={{ fontWeight: 'bold' }}>Logo (Max: 2MB)</label>
+          </Row>
 
-          {/* ✅ Show Image Preview (Uploaded or Existing) */}
+          <Row>
+            <Upload
+              maxCount={1}
+              beforeUpload={() => false}
+              onChange={handleFileChange}
+              showUploadList={{ showPreviewIcon: false }}
+              fileList={undefined}
+            >
+              <Button icon={<UploadOutlined />}>Upload Logo</Button>
+            </Upload>
+          </Row>
+
           {imagePreview && (
-            <div style={{ marginTop: 10 }}>
-              <label style={{ fontWeight: 'bold' }}>Preview:</label>
-              <Image
-                src={imagePreview}
-                alt="Cafe Logo Preview"
-                width={120}
-                height={120}
-                style={{ objectFit: 'cover', borderRadius: 5 }}
-              />
+            <div>
+              <Row justify="">
+                <div style={{ marginTop: 10 }}>
+                  <label style={{ fontWeight: 'bold' }}>Preview:</label>
+                </div>
+              </Row>
+              <Row justify="center">
+                <Image
+                  src={imagePreview}
+                  alt="Cafe Logo Preview"
+                  width={120}
+                  height={120}
+                  style={{ objectFit: 'cover', borderRadius: 5 }}
+                />
+
+              </Row>
             </div>
           )}
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Flex gap="large" justify="center" >
           <Button type="default" onClick={handleCancel}>
             Cancel
           </Button>
           <Button type="primary" onClick={handleSubmit}>
             {isEditMode ? "Update" : "Submit"}
           </Button>
-        </div>
+        </Flex>
       </Form>
     </div>
   );

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { Table, Input, Button, Spin, Alert, Space, Popconfirm, message } from 'antd';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Table, Input, Button, Spin, Alert, Space, Popconfirm, message, Flex } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { deleteCafe, getCafeList } from '../../services/cafeService';
+import TableList from '../../component/listingTable';
 
 const CafeList = () => {
   const [location, setLocation] = useState('');
@@ -131,20 +132,30 @@ const CafeList = () => {
     },
   ], [data]);
 
+  const handleRefresh = () => {
+    setLocation('')
+    fetchData('')
+  };
 
 
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: '10px' }}>
+
       {contextHolder}
-      <h1>List of Cafes</h1>
-      <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
+      {loading && <Spin tip="Loading..." style={{ marginBottom: '20px' }} />}
+      {error && <Alert message={error} type="error" showIcon style={{ marginBottom: '20px' }} />}
+          
+      <h1>CAFE</h1>
+
+      <Flex  style={{ padding: '10px' }} align="start" gap="middle" horizontal>
         <Input
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           style={{ width: 200, marginRight: '10px' }}
         />
+
         <Button type="primary" onClick={() => fetchData(location)} disabled={loading}>
           Fetch Data
         </Button>
@@ -152,12 +163,23 @@ const CafeList = () => {
         <Button type="primary" onClick={() => handleAddCafe()} disabled={loading}>
           Add New Cafe
         </Button>
-      </div>
 
-      {loading && <Spin tip="Loading..." style={{ marginBottom: '20px' }} />}
-      {error && <Alert message={error} type="error" showIcon style={{ marginBottom: '20px' }} />}
+        <Button color="cyan" onClick={handleRefresh}>
+            Refresh
+      </Button>
+      </Flex>
 
-      <Table dataSource={data} columns={columns} pagination={{ pageSize: 10 }} />
+
+      {/* header, data, columns, pageSize */}
+      <TableList 
+        header="List of Cafes"
+        loading={loading} 
+        error={error}
+        data={data}
+        columns={columns}  
+        pageSize={10} 
+      />
+     
     </div>
   );
 };
