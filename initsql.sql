@@ -111,26 +111,27 @@ GO
 
 
 INSERT INTO dbo.Employee ([employee_id], [name], [email_address], [phone_number], [gender]) VALUES
-    ('UI9897692', 'Alice', 'alice@test.com', '96759746', 'Male'),
-    ('UI1402441', 'Bob', 'bob@test.com', '87640990', 'Female'),
-    ('UI9516287', 'Charlie', 'charlie@test.com', '97714170', 'Male'),
-    ('UI4832584', 'David', 'david@test.com', '81553417', 'Female'),
-    ('UI8744761', 'Eve', 'eve@test.com', '92760463', 'Male'),
-    ('UI4528674', 'Frank', 'frank@test.com', '96860625', 'Female'),
-    ('UI3106762', 'Grace', 'grace@test.com', '94262165', 'Male'),
-    ('UI6174459', 'Hank', 'hank@test.com', '89734937', 'Female'),
-    ('UI7491006', 'Ivy', 'ivy@test.com', '97862532', 'Male'),
-    ('UI3884112', 'Jack', 'jack@test.com', '97604534', 'Female'),
-    ('UI5783011', 'Kathy', 'kathy@test.com', '82090372', 'Male'),
-    ('UI2016124', 'Liam', 'liam@test.com', '89658440', 'Female'),
-    ('UI9435784', 'Mona', 'mona@test.com', '84717745', 'Male'),
-    ('UI2529117', 'Nathan', 'nathan@test.com', '82378843', 'Female'),
-    ('UI2021470', 'Olivia', 'olivia@test.com', '85374790', 'Male'),
-    ('UI5495188', 'Paul', 'paul@test.com', '84622469', 'Female'),
-    ('UI6664438', 'Quincy', 'quincy@test.com', '93088974', 'Male'),
-    ('UI3286008', 'Rachel', 'rachel@test.com', '88867571', 'Female'),
-    ('UI3467310', 'Steve', 'steve@test.com', '88197343', 'Male'),
-    ('UI1185048', 'Tina', 'tina@test.com', '86481178', 'Female');
+    ('UI9897692', 'AliceJ', 'alicej@test.com', '96759746', 'Male'),
+    ('UI1402441', 'BobSmith', 'bobsmith@test.com', '87640990', 'Female'),
+    ('UI9516287', 'CharlieX', 'charliex@test.com', '97714170', 'Male'),
+    ('UI4832584', 'DavidXX', 'davidxx@test.com', '81553417', 'Female'),
+    ('UI8744761', 'EveBrown', 'evebrown@test.com', '92760463', 'Male'),
+    ('UI4528674', 'Franklin', 'franklin@test.com', '96860625', 'Female'),
+    ('UI3106762', 'GraceLee', 'gracelee@test.com', '94262165', 'Male'),
+    ('UI6174459', 'HankWang', 'hankwang@test.com', '89734937', 'Female'),
+    ('UI7491006', 'IvyJones', 'ivyjones@test.com', '97862532', 'Male'),
+    ('UI3884112', 'JackBlack', 'jackblack@test.com', '97604534', 'Female'),
+    ('UI5783011', 'KathyAnn', 'kathyann@test.com', '82090372', 'Male'),
+    ('UI2016124', 'LiamScott', 'liamscott@test.com', '89658440', 'Female'),
+    ('UI9435784', 'MonaLisa', 'monalisa@test.com', '84717745', 'Male'),
+    ('UI2529117', 'NathanXu', 'nathanxu@test.com', '82378843', 'Female'),
+    ('UI2021470', 'OliviaChen', 'oliviachen@test.com', '85374790', 'Male'),
+    ('UI5495188', 'PaulGray', 'paulgray@test.com', '84622469', 'Female'),
+    ('UI6664438', 'QuincyLu', 'quincylu@test.com', '93088974', 'Male'),
+    ('UI3286008', 'RachelTan', 'racheltan@test.com', '88867571', 'Female'),
+    ('UI3467310', 'SteveKim', 'stevekim@test.com', '88197343', 'Male'),
+    ('UI1185048', 'TinaWong', 'tinawong@test.com', '86481178', 'Female');
+
 
 
 
