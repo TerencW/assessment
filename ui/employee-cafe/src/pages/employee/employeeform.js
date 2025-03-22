@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Form, Button, Select, Radio, message } from "antd";
+import { Form, Button, Select, Radio, message, Flex, Row } from "antd";
 import TextBox from "../../component/textbox"; // ✅ Reusable TextBox Component
 import { getCafeList } from "../../services/cafeService";
 import { saveEmployee } from "../../services/employeeService";
@@ -10,25 +10,25 @@ const { Option } = Select;
 const EmployeeForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isEditMode = location.state?.employee; // ✅ Check if editing
-  const [cafes, setCafes] = useState([]); // ✅ Store list of cafés
-  const [selectedCafe, setSelectedCafe] = useState(""); // ✅ Store selected café name
+  const isEditMode = location.state?.employee;
+  const [cafes, setCafes] = useState([]); 
+
   const [messageApi, contextHolder] = message.useMessage();
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     phone: "",
     gender: "Male",
-    cafeId: "", // ✅ Assigned café ID (but we use name for dropdown)
+    cafeId: "", // 
   });
 
-  const [isDirty, setIsDirty] = useState(false); // ✅ Track unsaved changes
+  const [isDirty, setIsDirty] = useState(false);
 
   useEffect(() => {
     getCafeList().then((res) => res.data)
       .then((data) => {
         setCafes(data);
-  
+
         // ✅ If Editing, Pre-Fill `cafeId`
         if (isEditMode) {
           const cafe = data.find((c) => c.name === isEditMode.cafe);
@@ -44,7 +44,6 @@ const EmployeeForm = () => {
   }, [isEditMode]);
 
 
-  // ✅ Load employee data if editing
   useEffect(() => {
     if (isEditMode) {
       setFormValues({
@@ -57,19 +56,14 @@ const EmployeeForm = () => {
     }
   }, [isEditMode]);
 
-  // ✅ Handle Input Changes
   const handleChange = (field, value) => {
     setFormValues((prev) => ({ ...prev, [field]: value }));
     setIsDirty(true);
   };
 
-  // ✅ Handle Dropdown Change (Find Matching `cafeId`)
   const handleCafeChange = (cafe_id) => {
-   
-    
-
     const cafe = cafes.find((c) => c.cafe_id === cafe_id);
-    setSelectedCafe(cafe.name);
+
     setIsDirty(true);
     if (cafe) {
       setFormValues((prev) => ({ ...prev, cafeId: cafe.cafe_id }));
@@ -81,9 +75,8 @@ const EmployeeForm = () => {
 
   // ✅ Handle Form Submission
   const handleSubmit = async () => {
-    if (!isDirty )
-    {
-       navigate("/employees");
+    if (!isDirty) {
+      navigate("/employees");
     }
 
     if (formValues.name.length < 6 || formValues.name.length > 10) {
@@ -106,7 +99,6 @@ const EmployeeForm = () => {
       return;
     }
 
-
     const newEmployee = {
       name: formValues.name,
       email_address: formValues.email,
@@ -116,13 +108,10 @@ const EmployeeForm = () => {
     };
 
     try {
- 
       const response = await saveEmployee(isEditMode, newEmployee);
       if (!response.status === 200) {
-      
         throw new Error(`Failed to save employee: ${response.statusText}`);
       }
-
       messageApi.success(`Employee ${isEditMode ? "updated" : "created"} successfully!`);
       navigate("/employees");
     } catch (error) {
@@ -130,7 +119,6 @@ const EmployeeForm = () => {
     }
   };
 
-  // ✅ Handle Cancel Button (Warn if Unsaved Changes)
   const handleCancel = () => {
     if (isDirty && !window.confirm("You have unsaved changes. Are you sure you want to leave?")) {
       return;
@@ -163,9 +151,8 @@ const EmployeeForm = () => {
           placeholder="8xxxxxxx or 9xxxxxxx"
         />
 
-        {/* ✅ Gender Radio Group */}
-        <div style={{ marginBottom: "15px" }}>
-          <label style={{ fontWeight: "bold" }}>Gender</label>
+        <Row> <label style={{ fontWeight: "bold" }}>Gender</label> </Row>
+        <Row style={{ marginBottom: "15px" }}>
           <Radio.Group
             onChange={(e) => handleChange("gender", e.target.value)}
             value={formValues.gender}
@@ -173,33 +160,32 @@ const EmployeeForm = () => {
             <Radio value="Male">Male</Radio>
             <Radio value="Female">Female</Radio>
           </Radio.Group>
-        </div>
+        </Row>
 
-        {/* ✅ Assigned Café Dropdown (Prefilled with Name) */}
         <div style={{ marginBottom: "15px" }}>
           <label style={{ fontWeight: "bold" }}>Assigned Café</label>
           <Select
-            value={formValues.cafeId} // ✅ Set value to cafeId instead of name
+            value={formValues.cafeId} 
             onChange={handleCafeChange}
             placeholder="Select a café"
             style={{ width: "100%" }}
           >
             {cafes.map((cafe) => (
-              <Option key={cafe.cafe_id} value={cafe.cafe_id}> {/* ✅ Set value as `cafe_id` */}
+              <Option key={cafe.cafe_id} value={cafe.cafe_id}> 
                 {cafe.name}
               </Option>
             ))}
           </Select>
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Flex gap="large" justify="center" >
           <Button type="default" onClick={handleCancel}>
             Cancel
           </Button>
           <Button type="primary" onClick={handleSubmit}>
             {isEditMode ? "Update" : "Submit"}
           </Button>
-        </div>
+        </Flex>
       </Form>
     </div>
   );

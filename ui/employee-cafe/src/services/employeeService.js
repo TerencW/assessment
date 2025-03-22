@@ -5,16 +5,12 @@ import http from "./httpService";
 const apiEndpoint = apiUrl;
 
 export async function getEmployeeList(locationQuery = '') {
-
     const response = await http.get(`${apiEndpoint}/employees?cafe=${locationQuery}`);
     return response;
-
 };
 
 export async function deleteEmployee(id) {  
-
     return await http.delete(`${apiEndpoint}/employee/${id}`, null);
-
 }
 
 export async function saveEmployee(saveedit , employee) {

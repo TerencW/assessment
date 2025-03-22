@@ -1,66 +1,37 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Table, Input, Button, Spin, Alert, Space, Popconfirm, message, Flex } from 'antd';
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { Input, Button, Spin, Alert, Space, Popconfirm, message, Flex } from 'antd';
+
 import { useNavigate } from 'react-router-dom';
-import { deleteCafe, getCafeList } from '../../services/cafeService';
 import TableList from '../../component/listingTable';
 
+import { useSelector, useDispatch } from "react-redux";
+import { removeCafe , fetchCafes } from '../../services/cafeSlice';
+import {  getCafeColumns } from '../../constants/tableColumns';
+
 const CafeList = () => {
+  
   const [location, setLocation] = useState('');
-  const [data, setData] = useState([]);
-
-  const navigate = useNavigate(); // React Router Navigation Hook
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
   const [messageApi, contextHolder] = message.useMessage();
+  const { cafes, loading, error } = useSelector((state) => state.cafes);
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  // Function to fetch data from API
-  const fetchData = async (locationQuery = '') => {
-
-    setLoading(true);
-    setError('');
-
-    try {
-
-      const response = await getCafeList(locationQuery);
-      if (response.status != 200) {
-        throw new Error('Error fetching data');
-      }
-      const result = response.data;
-      const dataWithKey = result.map((item) => ({ key: item.cafe_id, ...item }));
-      setData(dataWithKey);
-
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Fetch data when the component loads
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchCafes());
+  }, [dispatch , location]);
 
-  // Handle Delete Operation
-  const handleDelete = async (cafe_id) => {
-    try {
-
-      const response = await deleteCafe(cafe_id)
-      if (response.status != 200) {
-        throw new Error('Failed to delete café');
-      }
-      messageApi.success('Café deleted successfully');
-      setData(data.filter((item) => item.cafe_id !== cafe_id)); // Remove deleted item from UI
-    } catch (error) {
-      messageApi.error(error.message);
-    }
+  const handleSearch = () => {
+    dispatch(fetchCafes(location));
   };
 
-  // Handle Edit Operation (Placeholder for now)
+  const handleDelete = async (cafe_id) => {
+    dispatch(removeCafe(cafe_id))
+    .then(() => messageApi.success("Cafe deleted successfully!"))
+    .catch((error) => messageApi.error(`Delete failed: ${error.message}`));
+  };
+
   const handleEdit = (cafe) => {
-    navigate('/cafe', { state: { cafe } }); // ✅ Pass cafe data to Edit Page
+    navigate('/cafe', { state: { cafe } }); 
   };
 
   // Navigate to Employee Page with Cafe Filter
@@ -72,69 +43,10 @@ const CafeList = () => {
     navigate(`/cafe`);
   };
 
-  // Define table columns
-  const columns = useMemo(() => [
-    {
-      title: 'Logo',
-      dataIndex: 'logo',
-      key: 'logo',
-      render: (text) =>
-        text ? (
-          <img
-            src={`data:image/png;base64,${text}`}
-            alt="Cafe Logo"
-            style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 5 }}
-          />
-        ) : (
-          'No Logo'
-        ),
-    },
-    {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Description',
-      dataIndex: 'description',
-      key: 'description',
-    },
-    {
-      title: 'Employees',
-      dataIndex: 'employees',
-      key: 'employees',
-      render: (text, record) => (
-        <Button type="link" onClick={() => handleEmployeesClick(record.name)}>
-          {text || 0}
-        </Button>
-      ), // Employees column is now a clickable button!
-    },
-    {
-      title: 'Location',
-      dataIndex: 'location',
-      key: 'location',
-    },
-    {
-      title: 'Actions',
-      key: 'actions',
-      render: (_, record) => (
-        <Space size="middle">
-          <Button type="primary" icon={<EditOutlined />} onClick={() => handleEdit(record)}>
-            Edit
-          </Button>
-          <Popconfirm title="Are you sure?" onConfirm={() => handleDelete(record.cafe_id)}>
-            <Button type="danger" icon={<DeleteOutlined />}>
-              Delete
-            </Button>
-          </Popconfirm>
-        </Space>
-      ),
-    },
-  ], [data]);
 
   const handleRefresh = () => {
     setLocation('')
-    fetchData('')
+    dispatch(fetchCafes(location));
   };
 
 
@@ -156,8 +68,8 @@ const CafeList = () => {
           style={{ width: 200, marginRight: '10px' }}
         />
 
-        <Button type="primary" onClick={() => fetchData(location)} disabled={loading}>
-          Fetch Data
+        <Button type="primary" onClick={handleSearch} disabled={loading}>
+          Search
         </Button>
 
         <Button type="primary" onClick={() => handleAddCafe()} disabled={loading}>
@@ -175,8 +87,8 @@ const CafeList = () => {
         header="List of Cafes"
         loading={loading} 
         error={error}
-        data={data}
-        columns={columns}  
+        data={cafes}
+        columns={getCafeColumns(handleEmployeesClick ,handleEdit, handleDelete)}
         pageSize={10} 
       />
      
